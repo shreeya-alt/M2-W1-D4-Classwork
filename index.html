@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content through JavaScript</title>
+
+    <script src="index-script.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .calculator {
+            background-color: rgb(229, 242, 254);
+            height: max-content;
+            width: 15em;
+            margin: 2em;
+            border: 4px solid grey;
+            border-radius: .5em;
+        }
+
+        .calculator .calculator-display {
+            background-color: rgba(255, 255, 255, 0.876);
+            height: auto;
+            width: auto;
+            font-size: 18pt;
+            font-family: 'poppins', sans-serif;
+            padding: .5em 0 0 .4em;
+        }
+
+        .calculator-key{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .calculator-key span{
+            display: flex;
+            height: 3em;
+            width: 3em;
+            background-color: honeydew;
+            margin: .5em;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-key span:hover{
+            box-shadow: inset 3px 3px 5px 0.5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <div class="calculator-display">&nbsp;</div>
+        <div class="calculator-key">
+
+            <!-- Numbers of the calculator -->
+            <span value="1" id="num-1" onclick="num1_function();">1</span>
+            <span value="2" id="num-2" onclick="num2_function();">2</span>
+            <span value="3" id="num-3" onclick="num3_function();">3</span>
+            <span value="4" id="num-4" onclick="num4_function();">4</span>
+            <span value="5" id="num-5" onclick="num5_function();">5</span>
+            <span value="6" id="num-6" onclick="num6_function();">6</span>
+            <span value="7" id="num-7" onclick="num7_function();">7</span>
+            <span value="8" id="num-8" onclick="num8_function();">8</span>
+            <span value="9" id="num-9" onclick="num9_function();">9</span>
+            <span value="0" id="num-0" onclick="num0_function();">0</span>
+
+            <!-- Operators of the calculator -->
+            <span value="+" id="sum" onclick="sum_function();">+</span>
+            <span value="-" id="sub" onclick="sub_function();">-</span>
+            <span value="*" id="mul" onclick="mul_function();">x</span>
+            <span value="/" id="div" onclick="div_function();">/</span>
+            <span value="=" id="equals" onclick="equals_function();">=</span>
+        </div> 
+    </div>
+
+    <script>
+
+        // Creating variable and storing the id in it
+        var display = document.querySelector(".calculator-display");
+        var num1 = document.getElementById("num-1").textContent;
+        var num2 = document.getElementById("num-2").textContent;
+        var num3 = document.getElementById("num-3").textContent;
+        var num4 = document.getElementById("num-4").textContent;
+        var num5 = document.getElementById("num-5").textContent;
+        var num6 = document.getElementById("num-6").textContent;
+        var num7 = document.getElementById("num-7").textContent;
+        var num8 = document.getElementById("num-8").textContent;
+        var num9 = document.getElementById("num-9").textContent;
+        var num0 = document.getElementById("num-0").textContent;
+
+        var sum = document.getElementById("sum").textContent;
+        var sub = document.getElementById("sub").textContent;
+        var mul = document.getElementById("mul").textContent;
+        var div = document.getElementById("div").textContent;
+        var equals = document.getElementById("equals").textContent;
+        // Add onclick event for every number
+        // num1.addEventListener("click", num1_function)
+        // num2.addEventListener("click", num2_function);
+        // num3.addEventListener("click", num3_function);
+        // num4.addEventListener("click", num4_function);
+        // num5.addEventListener("click", num5_function);
+        // num6.addEventListener("click", num6_function);
+        // num7.addEventListener("click", num7_function);
+        // num8.addEventListener("click", num8_function);
+        // num9.addEventListener("click", num9_function);
+        // num0.addEventListener("click", num0_function);
+
+        // Functions of each number
+        function num1_function(){
+            display.innerHTML=(num1);
+        }
+
+        function num2_function(){
+            display.innerHTML=(num2);
+        }
+
+        function num3_function(){
+            display.innerHTML=(num3);
+        }
+
+        function num4_function(){
+            display.innerHTML=(num4);
+        }
+
+        function num5_function(){
+            display.innerHTML=(num5);
+        }
+
+        function num6_function(){
+            display.innerHTML=(num6);
+        }
+
+        function num7_function(){
+            display.innerHTML=(num7);
+        }
+
+        function num8_function(){
+            display.innerHTML=(num8);
+        }
+
+        function num9_function(){
+            display.innerHTML=(num9);
+        }
+
+        function num0_function(){
+            display.innerHTML=(num0);
+        }
+
+        function sum_function(){
+            display.innerHTML=(sum);
+        }
+
+        function sub_function(){
+            display.innerHTML=(sub);
+        }
+
+        function mul_function(){
+            display.innerHTML=(mul);
+        }
+
+        function div_function(){
+            display.innerHTML=(div);
+        }
+
+        function equals_function(){
+            display.innerHTML=(equals);
+        }
+    </script>
+    <header id="test">
+        <!-- <input type="number" id="a">
+        <input type="number" id="b">
+        <br> <br>
+        <button id="sum">Sum</button> <br>
+        <button id="mul">Multiply</button>
+        <div class="result"></div>
+
+        <script>
+
+            var sum_btn = document.getElementById('sum'); 
+            var mul_btn = document.getElementById('mul');
+            sum_btn.addEventListener("click", function_1 );
+            mul_btn.addEventListener("click", function_2 );
+
+            function function_1() {
+                var a = document.getElementById("a").value;
+                var aInt = parseInt(a);
+                var b = document.getElementById("b").value;
+                var bInt = parseInt(b);
+                var display = document.querySelector('.result');
+                var sum = aInt + bInt
+                alert(sum);
+            }
+
+            function function_2() {
+                var a = document.getElementById("a").value;
+                var aInt = parseInt(a);
+                var b = document.getElementById("b").value;
+                var bInt = parseInt(b);
+                var display = document.querySelector('.result');
+                var Multiply = aInt * bInt
+                alert(Multiply);
+            }
+        </script> -->
+    </header>
+
+
+</body>
+
+</html>
